@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    margin-top: 20px;
+}
+
+#task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item {
+    margin-top: 10px;
+    overflow-wrap:break-word; 
+    white-space: normal; 
+}
+
+.task-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%; 
+}
+
+.del-edit {
+    display: flex;
+    align-items: center;
+}
+
+.del-edit button, .del-edit i {
+    margin-top: 5px;
+}
+
+#todo-list {
+    height: 250px;
+    overflow: auto;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+.delete { 
+    cursor: pointer;
+    color: red;
+}
+
+#edit-button:hover {
+    background-color: #9212ED;
+    color: white;
+    font-weight: bold;
+    transform: scale(0.9);
+}
