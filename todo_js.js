@@ -26,6 +26,7 @@ addTaskButton.addEventListener('click', function () {
     todoList.appendChild(taskItem);
 
     todoInput.value = '';
+    saveData();
 
     attachTaskEventListeners(taskItem);
 
@@ -45,20 +46,24 @@ function attachTaskEventListeners(taskItem) {
         const newText = prompt('Edit your task:', taskItem.querySelector('.task-text').textContent.trim());
         if (newText !== null && newText.trim() !== '') {
             taskItem.querySelector('.task-text').textContent = newText;
+            saveData();
         }
     });
 
     deleteButton.addEventListener('click', function () {
         taskItem.remove();
+        saveData();
     });
 
     checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             taskItem.classList.add('done'); 
             editButton.disabled = true; 
+            saveData();
         } else {
             taskItem.classList.remove('done'); 
             editButton.disabled = false; 
+            saveData();
         }
     });
 }
@@ -66,5 +71,22 @@ function attachTaskEventListeners(taskItem) {
 todoInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
         addTaskButton.click();
+        saveData();
     }
 });
+
+
+function saveData() {
+    localStorage.setItem("data",todoList.innerHTML);
+}
+
+function showTask() {
+    const savedData = localStorage.getItem("data");
+    if (savedData) {
+        todoList.innerHTML = savedData;
+        const taskItems = todoList.querySelectorAll('li');
+        taskItems.forEach(attachTaskEventListeners);
+    }
+}
+
+showTask();

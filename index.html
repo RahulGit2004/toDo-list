@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Project</title>
+    <link rel="icon" href="/todo_list/assets/todo icon cir.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,31 +26,7 @@
             <div id="todo-container" class="col-md-6">
                 <div class="container-md p-4 border rounded shadow">
                     <h2 class="text-center mb-4">To-Do List</h2>
-                    <ul id="todo-list" class="list-group">
-                        
-                        <li id="task" class="list-group-item">
-                            <input type="checkbox" class="checkbox-done me-3">
-                            This is Sample task 1, can not be edit or delete
-                            <div class="del-edit">
-                                <button class="btn btn-sm btn-outline-dark me-4 edit-task">
-                                    Edit
-                                </button>
-                                <i class="fa-solid fa-trash delete"></i>
-                            </div>
-                        </li>
-                        
-                        <li id="task" class="list-group-item d-flex justify-content-between mt-2">
-                            <input type="checkbox" class="checkbox-done me-3">
-                            This is Sample task 2, can not be edit or delete
-                            <div class="del-edit">
-                                <button class="btn btn-sm btn-outline-dark me-4 edit-task">
-                                    Edit
-                                </button>
-                                <i class="fa-solid fa-trash delete"></i>
-                            </div>
-                        </li>
-            
-                    </ul>
+                    <ul id="todo-list" class="list-group"></ul>
                     <div class="mt-3">
                         <input type="text" id="todo-input" class="form-control mb-3" placeholder="Add Your ToDo">
                         <button id="add-task" class="btn btn-primary w-100">Add Task</button>
